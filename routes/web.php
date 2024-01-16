@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\JovenController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +35,9 @@ Route::post('/register', [RegisterController::class, 'register']);
 // RUTAS DE LOGIN
 Route::get('/login', [LoginController::class, 'show']);
 Route::post('/login', [LoginController::class, 'login']);
+
+// RUTAS DE LOGOUT
+Route::get('/logout', [LogoutController::class, 'logout']);
 
 // RUTA A HOME
 Route::get('/home', [HomeController::class, 'index']);

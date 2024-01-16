@@ -7,6 +7,22 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>HOSANNA</h1>
+
+    @auth
+        @php
+            session(['user_name' => auth()->user()->username]);
+        @endphp
+        <script>
+            window.location.href = "/jovenes/view";
+        </script>
+    @endauth
+
+
+    @guest
+    <script>
+        window.location.href = "/login";
+    </script>
+    @endguest
+
 </body>
 </html>

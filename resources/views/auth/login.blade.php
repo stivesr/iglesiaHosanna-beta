@@ -24,10 +24,7 @@
             <h1 class="text-center m-0">HOSANNA</h1>
         </div>
         <div class="ms-auto">
-            <form action="" method="POST">
-                @csrf
-                <button type="submit" class="btn btn-warning text-white">Registrarse</button>
-            </form>
+            <a href="/register" class="btn btn-warning text-white">Registrarse</a>
         </div>
     </div>
 

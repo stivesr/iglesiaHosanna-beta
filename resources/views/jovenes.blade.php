@@ -24,16 +24,10 @@
             <h1 class="text-center m-0">JOVENES</h1>
         </div>
         <div class="ms-auto">
-            <form action="" method="POST">
-                @csrf
-                <button type="submit" class="btn btn-info text-white">Usuario</button>
-            </form>
+            <a href="" class="btn btn-info text-white">{{ session('user_name') }}</a>
         </div>
         <div>
-            <form action="" method="POST">
-                @csrf
-                <button type="submit" class="btn btn-danger">Cerrar Sesión</button>
-            </form>
+            <a href="/logout" class="btn btn-warning text-white">Cerrar Sesión</a>
         </div>
     </div>
     
