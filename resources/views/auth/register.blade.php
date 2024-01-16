@@ -33,51 +33,51 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">Registro</div>
+                    <div class="card-header text-center">Registro</div>
                     <div class="card-body">
                         <form action="/register" method="POST">
                             @csrf
-
-                            <!-- NOMBRE -->
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="name" name="name" required>
+    
+                            <!-- NOMBRE Y USUARIO EN LA MISMA FILA -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="name" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="username" class="form-label">Usuario</label>
+                                    <input type="text" class="form-control" id="username" name="username" required>
+                                </div>
                             </div>
-
-                            <!-- USUARIO -->
-                            <div class="mb-3">
-                                <label for="username" class="form-label">Usuario</label>
-                                <input type="text" class="form-control" id="username" name="username" required>
-                            </div>
-
+    
                             <!-- CORREO ELECTRONICO -->
                             <div class="mb-3">
                                 <label for="correo" class="form-label">Correo Electrónico</label>
                                 <input type="email" class="form-control" id="email" name="email" required>
                             </div>
-
-                            <!-- CONTRASEÑA -->
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="password" name="password"
-                                    required>
+    
+                            <!-- CONTRASEÑA Y CONFIRMAR CONTRASEÑA EN LA MISMA FILA -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="password" class="form-label">Contraseña</label>
+                                    <input type="password" class="form-control" id="password" name="password" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="password_confirmation" class="form-label">Confirmar Contraseña</label>
+                                    <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required>
+                                </div>
                             </div>
-
-                            <!-- CONFIRMAR CONTRASEÑA -->
-                            <div class="mb-3">
-                                <label for="password_confirmation" class="form-label">Confirmar Contraseña</label>
-                                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation"
-                                    required>
+    
+                            <div class="row justify-content-center mx-5 ms-5 p-3">
+                                <button type="submit" class="btn btn-primary btn-lg">Registrarse</button>
                             </div>
-
-                            <button type="submit" class="btn btn-primary">Registrarse</button>
-
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
 
 </body>
 

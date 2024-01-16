@@ -18,6 +18,9 @@ return new class extends Migration
             $table->integer('edad')->nullable();
             $table->string('telefono')->nullable();
             $table->string('barrio')->nullable();
+            
+            $table->foreignId('user_id')->constrained();
+
             $table->timestamps();
         });
     }

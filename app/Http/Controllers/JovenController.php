@@ -4,14 +4,26 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Joven;
+use Illuminate\Support\Facades\Auth;
 
 class JovenController extends Controller
 {
+
     public function view()
     {
-        $datos = Joven::all();
+        $user = Auth::user(); // Obtener el usuario autenticado
+
+        if ($user->isAdmin) {
+            // Si el usuario es administrador, obtener todos los jóvenes
+            $datos = Joven::with('user')->get();
+        } else {
+            // Si el usuario no es administrador, obtener solo los jóvenes asociados a su ID
+            $datos = Joven::where('user_id', $user->id)->get();
+        }
+
         return view('jovenes')->with("datos", $datos);
     }
+
 
     public function create(Request $request)
     {
@@ -22,6 +34,10 @@ class JovenController extends Controller
             $joven->edad = $request->txtedad;
             $joven->telefono = $request->txttelefono;
             $joven->barrio = $request->txtbarrio;
+
+            // Obtener el id del usuario autenticado y asignarlo al registro
+            $joven->user_id = Auth::id();
+
             $joven->save();
         } catch (\Exception $e) {
             return back()->with("error", "Error al registrar");
@@ -29,6 +45,7 @@ class JovenController extends Controller
 
         return back()->with("success", "Registrado con éxito");
     }
+
 
     public function update(Request $request)
     {

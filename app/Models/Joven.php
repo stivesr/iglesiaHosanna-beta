@@ -12,4 +12,9 @@ class Joven extends Model
     protected $fillable = [
         'nombre', 'apellidos', 'edad', 'telefono', 'barrio',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

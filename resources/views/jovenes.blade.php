@@ -157,13 +157,16 @@
                     <th scope="col" class="col-1">Edad</th>
                     <th scope="col" class="col-1">Teléfono</th>
                     <th scope="col" class="col-2">Barrio</th>
+                    @if(Auth::check() && Auth::user()->isAdmin)
+                        <th scope="col" class="col-2">Líder</th>
+                    @endif
                     <th scope="col" class="col-1"></th>
                 </tr>
             </thead>
 
             <!-- DATOS (FILAS) -->
             <tbody class="table-group-divider">
-                @foreach ($datos as $joven)
+                @forelse ($datos as $joven)
                     <tr class="align-middle">
                         <th class="d-none">{{ $joven->id }}</th>
                         <td>{{ $joven->nombre }}</td>
@@ -171,6 +174,10 @@
                         <td>{{ $joven->edad }}</td>
                         <td>{{ $joven->telefono }}</td>
                         <td>{{ $joven->barrio }}</td>
+
+                        @if(Auth::check() && Auth::user()->isAdmin)
+                        <td>{{ $joven->user->name }}</td>
+                        @endif
 
                         <!-- BOTONES DE EDITAR Y ELIMINAR -->
                         <td class="text-center">
@@ -269,7 +276,12 @@
                         </div>
 
                     </tr>
-                @endforeach
+                    @empty
+                    <tr>
+                        <td colspan="7" class="text-center ">
+                            <h4 class="text-primary m-0 p-2">No hay datos</h4></td>
+                    </tr>
+                @endforelse
             </tbody>
         </table>
     </div>

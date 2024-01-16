@@ -29,33 +29,37 @@
     </div>
 
     <!-- FORMULARIO DE INICIO DE SESIÓN -->
-    <div class="container mt-4">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">Iniciar Sesión</div>
-                    <div class="card-body">
-                        <form action="/login" method="POST">
-                            @csrf
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header text-center">Iniciar Sesión</div>
+                <div class="card-body">
+                    <form action="/login" method="POST">
+                        @csrf
 
-                            <!-- USUARIO O CORREO ELECTRONICO -->
-                            <div class="mb-3">
-                                <label for="username" class="form-label">Usuario o Correo Electrónico</label>
-                                <input type="text" class="form-control" id="username" name="username" required>
-                            </div>
+                        <!-- USUARIO O CORREO ELECTRONICO -->
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Usuario o Correo Electrónico</label>
+                            <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
 
-                            <!-- CONTRASEÑA -->
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="password" name="password" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-                        </form>
-                    </div>
+                        <!-- CONTRASEÑA -->
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        
+                        <div class="row justify-content-center mx-5 ms-5 p-3">
+                            <button type="submit" class="btn btn-primary btn-lg">Iniciar Sesión</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
 
 </body>
 
