@@ -27,47 +27,63 @@
             <a href="" class="btn btn-info text-white">{{ session('user_name') }}</a>
         </div>
         <div>
-            <a href="/logout" class="btn btn-warning text-white">Cerrar Sesión</a>
+            <button id="btnCerrarSesion" class="btn btn-warning text-white">Cerrar Sesión</button>
+            <script>
+                // Función para mostrar el mensaje de "cerrando sesión" y redirigir después de 300 ms
+                function mostrarMensajeCerrarSesion() {
+                    Swal.fire({
+                        title: "Cerrando Sesión",
+                        html: "Por favor, espera...",
+                        timer: 700,  // Tiempo en milisegundos
+                        showConfirmButton: false,  // No mostrar botón de confirmación
+                        allowOutsideClick: false,
+                        willOpen: () => {
+                            Swal.showLoading();
+                        }
+                    }).then(() => {
+                        // Redirige al usuario a la página de inicio de sesión
+                        window.location.href = "/logout";
+                    });
+                }
+            
+                // Asocia la función al botón de cerrar sesión
+                document.getElementById('btnCerrarSesion').addEventListener('click', function (event) {
+                    event.preventDefault();
+                    mostrarMensajeCerrarSesion();
+                });
+            </script>
         </div>
     </div>
     
     <!-- <h1 class="text-center pt-3 text-bg-primary p-3">Jóvenes</h1> -->
 
-   <!-- Mensajes de éxito y error -->
-   @if (session('success') || session('error'))
-        @php
-            $modalId = session('success') ? 'modalSuccess' : 'modalError';
-            $modalLabel = session('success') ? 'Éxito' : 'Error';
-        @endphp
-        <div class="modal fade" id="{{ $modalId }}" tabindex="-1" aria-labelledby="{{ $modalId }}Label"
-            aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="{{ $modalId }}Label">{{ $modalLabel }}</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        {{ session('success') ?? session('error') }}
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Mensajes de éxito y error -->
+    @if (session('success') || session('error'))
         <script>
             document.addEventListener('DOMContentLoaded', function () {
-                var myModal = new bootstrap.Modal(document.getElementById('{{ $modalId }}'));
-                myModal.show();
+                @if (session('success'))
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "{{ session('success') }}",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                @endif
+
+                @if (session('error'))
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "error",
+                        title: "{{ session('error') }}",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                @endif
             });
         </script>
     @endif
 
-    <!-- Alerta de confirmación para eliminar un registro -->
-    <script>
-        var res = function() {
-            var not = confirm("¿Estás seguro de eliminar el registro?");
-            return not
-        }
-    </script>
 
     <!-- CRUD -->
     <div class="ps-5 pe-5 table-responsive">
@@ -189,7 +205,33 @@
                             <div class="d-none d-sm-block">
                                 <!-- Se mostrará en tamaños mayores a dispositivos móviles -->
                                 <a href="" data-bs-toggle="modal" data-bs-target="#modalEditar{{ $joven->id }}" class="btn btn-warning me-2"><i class="fas fa-pen"></i></a>
-                                <a href="{{ route('jovenes.delete', $joven->id) }}" onclick="return res()" class="btn btn-danger ms-2"><i class="fas fa-trash"></i></a>
+                                <a href="{{ route('jovenes.delete', $joven->id) }}" onclick="return confirmarEliminacion()" class="btn btn-danger ms-2">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                                
+                                <script>
+                                    function confirmarEliminacion() {
+                                        Swal.fire({
+                                            title: "¿Estás seguro de eliminar este registro?",
+                                            text: "¡No podrás revertir esto!",
+                                            icon: "warning",
+                                            showCancelButton: true,
+                                            confirmButtonColor: "#3085d6",
+                                            cancelButtonColor: "#d33",
+                                            confirmButtonText: "Sí, eliminarlo",
+                                            cancelButtonText: "Cancelar"
+                                        }).then((result) => {
+                                            if (result.isConfirmed) {
+                                                
+                                                // Redireccionar a la ruta de eliminación
+                                                window.location.href = "{{ route('jovenes.delete', $joven->id) }}";
+                                            }
+                                        });
+                                
+                                        // Evitar que el enlace se siga ejecutando automáticamente
+                                        return false;
+                                    }
+                                </script>
                             </div>
                         </td>
                         
@@ -285,6 +327,9 @@
             </tbody>
         </table>
     </div>
+
+    <!-- SweetAlert 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
      <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

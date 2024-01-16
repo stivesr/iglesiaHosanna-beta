@@ -33,43 +33,61 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header text-center">Registro</div>
+                    <div class="card-header text-center text-bg-primary">Registro</div>
                     <div class="card-body">
-                        <form action="/register" method="POST">
+                        <form action="/register" method="POST" id="formRegistrarse">
                             @csrf
-    
+
                             <!-- NOMBRE Y USUARIO EN LA MISMA FILA -->
                             <div class="row mb-3">
                                 <div class="col-md-6">
-                                    <label for="name" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="name" name="name" required>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon1">
+                                            <i class="fas fa-user"></i>
+                                        </span>
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="nombre" required>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="username" class="form-label">Usuario</label>
-                                    <input type="text" class="form-control" id="username" name="username" required>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon2">
+                                            <i class="fas fa-at"></i>
+                                        </span>
+                                        <input type="text" class="form-control" id="username" name="username" placeholder="usuario" required>
+                                    </div>
                                 </div>
                             </div>
-    
+
                             <!-- CORREO ELECTRONICO -->
-                            <div class="mb-3">
-                                <label for="correo" class="form-label">Correo Electrónico</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon3">
+                                    <i class="fas fa-inbox"></i>
+                                </span>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="email" required>
                             </div>
-    
+
                             <!-- CONTRASEÑA Y CONFIRMAR CONTRASEÑA EN LA MISMA FILA -->
                             <div class="row mb-3">
                                 <div class="col-md-6">
-                                    <label for="password" class="form-label">Contraseña</label>
-                                    <input type="password" class="form-control" id="password" name="password" required>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon4">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="contraseña" required>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="password_confirmation" class="form-label">Confirmar Contraseña</label>
-                                    <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon5">
+                                            <i class="fas fa-user-lock"></i>
+                                        </span>
+                                        <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="confirmar contraseña" required>
+                                    </div>
                                 </div>
                             </div>
-    
-                            <div class="row justify-content-center mx-5 ms-5 p-3">
-                                <button type="submit" class="btn btn-primary btn-lg">Registrarse</button>
+
+                            <div class="row justify-content-center p-3">
+                                <button type="submit" class="btn btn-primary btn-lg" id="btnRegistrarse">Registrarse</button>
                             </div>
                         </form>
                     </div>
@@ -77,7 +95,34 @@
             </div>
         </div>
     </div>
-    
+
+    <script>
+        // Función para mostrar el mensaje de "Iniciando Sesión" y redirigir después de 700 ms
+        function mostrarMensajeRegistrarse() {
+            Swal.fire({
+                title: "Registrando nuevo usuario",
+                html: "Por favor, espera...",
+                timer: 700,  // Tiempo en milisegundos
+                showConfirmButton: false,  // No mostrar botón de confirmación
+                allowOutsideClick: false,
+                willOpen: () => {
+                    Swal.showLoading();
+                }
+            }).then(() => {
+                // Después de mostrar el mensaje, completa la acción del formulario
+                document.getElementById('formRegistrarse').submit();
+            });
+        }
+
+        // Asocia la función al botón de registrarse
+        document.getElementById('btnRegistrarse').addEventListener('click', function (event) {
+            event.preventDefault();
+            mostrarMensajeRegistrarse();
+        });
+    </script>
+
+    <!-- SweetAlert 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 </body>
 
