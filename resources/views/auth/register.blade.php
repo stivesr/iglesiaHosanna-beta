@@ -26,7 +26,7 @@
         <div class="ms-auto">
             <form action="" method="POST">
                 @csrf
-                <button type="submit" class="btn btn-info text-white">Iniciar Sesión</button>
+                <button type="submit" class="btn btn-warning text-white">Iniciar Sesión</button>
             </form>
         </div>
     </div>
