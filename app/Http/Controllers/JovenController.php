@@ -11,7 +11,14 @@ class JovenController extends Controller
 
     public function view()
     {
-        $user = Auth::user(); // Obtener el usuario autenticado
+        // Verificar si hay un usuario autenticado
+        if (!Auth::check()) {
+            // Redirigir al usuario a la página de inicio de sesión
+            return redirect('/login');
+        }
+
+        // Obtener el usuario autenticado
+        $user = Auth::user();
 
         if ($user->isAdmin) {
             // Si el usuario es administrador, obtener todos los jóvenes
@@ -23,6 +30,7 @@ class JovenController extends Controller
 
         return view('jovenes')->with("datos", $datos);
     }
+
 
 
     public function create(Request $request)
