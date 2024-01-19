@@ -14,26 +14,27 @@
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/1cf153e67c.js" crossorigin="anonymous"></script>
 
+    <!-- Centrar contenido -->
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+
 </head>
 
 <body>
-    
-    <!-- Titulo -->
-    <div class="hstack gap-2 text-bg-primary pt-3 pb-3 px-5 mb-2">
-        <div>
-            <h1 class="text-center m-0">HOSANNA</h1>
-        </div>
-        <div class="ms-auto">
-            <a href="/login" class="btn btn-warning text-white">Iniciar Sesión</a>
-        </div>
-    </div>
 
     <!-- FORMULARIO DE REGISTRO -->
     <div class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header text-center text-bg-primary">Registro</div>
+                    <div class="card-header text-center text-bg-primary">Formulario de Registro</div>
                     <div class="card-body">
                         <form action="/register" method="POST" id="formRegistrarse">
                             @csrf
@@ -45,7 +46,8 @@
                                         <span class="input-group-text" id="basic-addon1">
                                             <i class="fas fa-user"></i>
                                         </span>
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="nombre" required>
+                                        <input type="text" class="form-control" id="name" name="name"
+                                            placeholder="nombre" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -53,7 +55,8 @@
                                         <span class="input-group-text" id="basic-addon2">
                                             <i class="fas fa-at"></i>
                                         </span>
-                                        <input type="text" class="form-control" id="username" name="username" placeholder="usuario" required>
+                                        <input type="text" class="form-control" id="username" name="username"
+                                            placeholder="usuario" required>
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +66,8 @@
                                 <span class="input-group-text" id="basic-addon3">
                                     <i class="fas fa-inbox"></i>
                                 </span>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="email" required>
+                                <input type="email" class="form-control" id="email" name="email"
+                                    placeholder="email" required>
                             </div>
 
                             <!-- CONTRASEÑA Y CONFIRMAR CONTRASEÑA EN LA MISMA FILA -->
@@ -73,7 +77,8 @@
                                         <span class="input-group-text" id="basic-addon4">
                                             <i class="fas fa-lock"></i>
                                         </span>
-                                        <input type="password" class="form-control" id="password" name="password" placeholder="contraseña" required>
+                                        <input type="password" class="form-control" id="password" name="password"
+                                            placeholder="contraseña" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -81,14 +86,22 @@
                                         <span class="input-group-text" id="basic-addon5">
                                             <i class="fas fa-user-lock"></i>
                                         </span>
-                                        <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="confirmar contraseña" required>
+                                        <input type="password" class="form-control" id="password_confirmation"
+                                            name="password_confirmation" placeholder="confirmar contraseña" required>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row justify-content-center p-3">
-                                <button type="submit" class="btn btn-primary btn-lg" id="btnRegistrarse">Registrarse</button>
+                                <button type="submit" class="btn btn-primary btn-lg"
+                                    id="btnRegistrarse">Registrarse</button>
                             </div>
+
+                            <div class="ms-auto text-center">
+                                Ya tienes una cuenta?
+                                <a href="/login" class="btn btn-warning text-white">Inicia Sesión</a>
+                            </div>
+
                         </form>
                     </div>
                 </div>
@@ -97,13 +110,13 @@
     </div>
 
     <script>
-        // Función para mostrar el mensaje de "Iniciando Sesión" y redirigir después de 700 ms
+        // Función para mostrar el mensaje de "Registrando nuevo usuario" y redirigir después
         function mostrarMensajeRegistrarse() {
             Swal.fire({
                 title: "Registrando nuevo usuario",
                 html: "Por favor, espera...",
-                timer: 700,  // Tiempo en milisegundos
-                showConfirmButton: false,  // No mostrar botón de confirmación
+                timer: 700, // Tiempo en milisegundos
+                showConfirmButton: false, // No mostrar botón de confirmación
                 allowOutsideClick: false,
                 willOpen: () => {
                     Swal.showLoading();
@@ -115,7 +128,7 @@
         }
 
         // Asocia la función al botón de registrarse
-        document.getElementById('btnRegistrarse').addEventListener('click', function (event) {
+        document.getElementById('btnRegistrarse').addEventListener('click', function(event) {
             event.preventDefault();
             mostrarMensajeRegistrarse();
         });

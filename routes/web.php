@@ -18,15 +18,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// CRUD DE JOVENES
-Route::get('/jovenes/view', [JovenController::class, 'view'])->name('jovenes.view');
-Route::post('/jovenes/create', [JovenController::class, 'create'])->name('jovenes.create');
-Route::post('/jovenes/update', [JovenController::class, 'update'])->name('jovenes.update');
-Route::get('/jovenes/delete/{id}', [JovenController::class, 'delete'])->name('jovenes.delete');
-
+// RUTAS DE INICIO
 Route::get('/', function () {
-    return view('welcome');
+    return view('home.index');
 });
+
+Route::get('/index', [HomeController::class, 'index']);
 
 // RUTAS DE REGISTRO
 Route::get('/register', [RegisterController::class, 'show']);
@@ -39,5 +36,8 @@ Route::post('/login', [LoginController::class, 'login']);
 // RUTAS DE LOGOUT
 Route::get('/logout', [LogoutController::class, 'logout']);
 
-// RUTA A HOME
-Route::get('/home', [HomeController::class, 'index']);
+// RUTAS PROTEGIDAS
+Route::view('/register', 'auth.register')->middleware('auth');
+
+// VISTA DE ACCESO DENEGADO
+Route::view('/accessdenied', 'auth.accessdenied')->name('accessdenied');
