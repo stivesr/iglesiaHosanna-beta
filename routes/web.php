@@ -37,7 +37,7 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::get('/logout', [LogoutController::class, 'logout']);
 
 // RUTAS PROTEGIDAS
-// Route::view('/register', 'auth.register')->middleware('auth');
+Route::view('/register', 'auth.register')->middleware('auth');
 
 // VISTA DE ACCESO DENEGADO
 Route::view('/accessdenied', 'auth.accessdenied')->name('accessdenied');
