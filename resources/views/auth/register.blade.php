@@ -104,34 +104,6 @@
         </div>
     </div>
 
-    <script>
-        // Función para mostrar el mensaje de "Registrando nuevo usuario" y redirigir después
-        function mostrarMensajeRegistrarse() {
-            Swal.fire({
-                title: "Registrando nuevo usuario",
-                html: "Por favor, espera...",
-                timer: 700, // Tiempo en milisegundos
-                showConfirmButton: false, // No mostrar botón de confirmación
-                allowOutsideClick: false,
-                willOpen: () => {
-                    Swal.showLoading();
-                }
-            }).then(() => {
-                // Después de mostrar el mensaje, completa la acción del formulario
-                document.getElementById('formRegistrarse').submit();
-            });
-        }
-
-        // Asocia la función al botón de registrarse
-        document.getElementById('btnRegistrarse').addEventListener('click', function(event) {
-            event.preventDefault();
-            mostrarMensajeRegistrarse();
-        });
-    </script>
-
-    <!-- SweetAlert 2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
 </body>
 
 </html>
