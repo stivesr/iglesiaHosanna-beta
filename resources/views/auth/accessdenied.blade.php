@@ -34,8 +34,7 @@
             Acceso Denegado
         </div>
         <div class="card-body text-center">
-            <p class="card-text">Te invitamos a iniciar sesión primeramente</p>
-            <a href="/login" class="btn btn-warning text-white">Inicia Sesión</a>
+            <p class="card-text">No puedes acceder a esta página</p>
         </div>
     </div>
 

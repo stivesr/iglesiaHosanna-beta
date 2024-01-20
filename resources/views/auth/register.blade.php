@@ -97,11 +97,6 @@
                                     id="btnRegistrarse">Registrarse</button>
                             </div>
 
-                            <div class="ms-auto text-center">
-                                Ya tienes una cuenta?
-                                <a href="/login" class="btn btn-warning text-white">Inicia Sesión</a>
-                            </div>
-
                         </form>
                     </div>
                 </div>

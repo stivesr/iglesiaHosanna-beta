@@ -66,13 +66,6 @@
                                     Sesión</button>
                             </div>
 
-                            <!--
-                            <div class="ms-auto text-center">
-                                No tienes una cuenta?
-                                <a href="/register" class="btn btn-warning text-white">Registrate</a>
-                            </div>
-                             -->
-
                         </form>
                     </div>
                 </div>
