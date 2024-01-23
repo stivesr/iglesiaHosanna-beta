@@ -16,20 +16,19 @@
 
     <div class="banner">
         <div class="navbar">
-            <img src="{{ asset('/images/png/Hosanna_H.png') }}" class="hosanna" alt="Hosanna">
+            <a href="/"><img src="{{ asset('/images/png/Hosanna_H.png') }}" class="hosanna" alt="Hosanna"></a>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="#">Actividades</a></li>
+                <li><a href="#">Contacto</a></li>
             </ul>
         </div>
 
         <div class="content">
             <h1>HOSANNA</h1>
             <p>Centro Cristiano Familiar</p>
-
             <div>
-                <button type="button"><span></span>ORACIÓN</button>
+                <button type="button"><span></span>HORARIOS</button>
                 <button type="button"><span></span>PETICIONES</button>
             </div>
         </div>
