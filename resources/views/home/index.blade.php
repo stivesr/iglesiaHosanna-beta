@@ -53,6 +53,14 @@
         </div>
     </div>
 
+    <div class="social-section">
+        
+    </div>
+
+    <footer>
+        © Iglesia Hosanna - Todos los Derechos Reservados
+    </footer>
+
     <script>
         const toggleBtn = document.querySelector('.toggle-btn')
         const toggleBtnIcon = document.querySelector('.toggle-btn i')
