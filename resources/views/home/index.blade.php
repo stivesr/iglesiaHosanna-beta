@@ -54,9 +54,14 @@
     </div>
 
     <div class="social-section">
-        
-    </div>
 
+        <div class="social-icons">
+            <a href="https://www.facebook.com/hosanna.igle" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+
+            <a href="https://www.instagram.com/hosannaigle" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+
+    </div>
     <footer>
         © Iglesia Hosanna - Todos los Derechos Reservados
     </footer>
