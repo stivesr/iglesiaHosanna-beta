@@ -18,12 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// RUTAS DE INICIO
-Route::get('/', function () {
-    return view('home.index');
-});
-
-Route::get('/index', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index']);
 
 // RUTAS DE REGISTRO
 Route::get('/register', [RegisterController::class, 'show']);
@@ -39,5 +34,5 @@ Route::get('/logout', [LogoutController::class, 'logout']);
 // RUTAS PROTEGIDAS
 Route::view('/register', 'auth.register')->middleware('auth');
 
-// VISTA DE ACCESO DENEGADO
+// ACCESO DENEGADO
 Route::view('/accessdenied', 'auth.accessdenied')->name('accessdenied');
