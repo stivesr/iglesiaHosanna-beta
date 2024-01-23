@@ -1,15 +1,21 @@
 const openModal = document.querySelector(".modal-btn-horarios");
 const modal = document.querySelector(".modal");
 const closeModal = document.querySelector(".modal-close");
+const body = document.body;
+const overlay = document.querySelector(".overlay");
 
 openModal.addEventListener("click", (e) => {
     e.preventDefault();
     modal.classList.add("modal--show");
+    body.classList.add("modal-open");
+    overlay.style.display = "block";
 });
 
 closeModal.addEventListener("click", (e) => {
     e.preventDefault();
     modal.classList.remove("modal--show");
+    body.classList.remove("modal-open");
+    overlay.style.display = "none";
 });
 
 const toggleBtn = document.querySelector(".toggle-btn");
