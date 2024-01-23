@@ -1,18 +1,19 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
 }
 
-.banner{
+
+.banner {
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(/images/photos/STV_2068.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(/images/photos/STV_2068.jpg);
     background-size: cover;
     background-position: center;
 }
 
-.navbar{
+.navbar {
     width: 85%;
     margin: auto;
     padding: 35px 0;
@@ -21,25 +22,47 @@
     justify-content: space-between;
 }
 
-.hosanna{
+.hosanna {
     width: 50px;
     cursor: pointer;
 }
 
-.navbar ul li{
+.action-btn {
+    text-decoration: none;
+    background-color: #1ec3ff;
+    color: #fff;
+    padding: 0.7rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.action-btn:hover {
+    transform: scale(1.2);
+}
+
+.action-btn:active {
+    transform: scale(1);
+}
+
+.navbar ul li {
     list-style: none;
     display: inline-block;
     margin: 0 20px;
     position: relative;
 }
 
-.navbar ul li a{
+.navbar ul li a {
     text-decoration: none;
     color: #fff;
     text-transform: uppercase;
 }
 
-.navbar ul li::after{
+.navbar ul li::after {
     content: '';
     height: 3px;
     width: 0;
@@ -50,11 +73,18 @@
     transition: 0.5s;
 }
 
-.navbar ul li:hover::after{
+.navbar ul li:hover::after {
     width: 100%;
 }
 
-.content{
+.navbar .toggle-btn {
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.content {
     width: 100%;
     position: absolute;
     top: 50%;
@@ -63,18 +93,18 @@
     color: #fff;
 }
 
-.content h1{
+.content h1 {
     font-size: 70px;
     margin-top: 80px;
 }
 
-.content p{
+.content p {
     margin: 20px auto;
     font-weight: 100;
     line-height: 25px;
 }
 
-.content button{
+.content button {
     width: 200px;
     padding: 15px 0;
     text-align: center;
@@ -89,7 +119,7 @@
     overflow: hidden;
 }
 
-span{
+span {
     background: #1ec3ff;
     height: 100%;
     width: 0;
@@ -101,6 +131,71 @@ span{
     transition: 0.5s;
 }
 
-button:hover span{
+button:hover span {
     width: 100%;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 80px;
+    height: 0;
+    width: 200px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+}
+
+.dropdown-menu.open {
+
+    height: 200px;
+    padding: 20px 5px 5px 5px;
+}
+
+.dropdown-menu .option a {
+    text-decoration: none;
+    color: #1ec3ff;
+    transition: transform 0.3s;
+}
+
+.dropdown-menu .option a:hover {
+    transform: scale(1.2);
+}
+
+.dropdown-menu .option a:active {
+    transform: scale(1);
+}
+
+.dropdown-menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 767px) {
+
+    .banner {
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(/images/photos/STV_0975.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .navbar .links,
+    .navbar .action-btn {
+        display: none;
+    }
+
+    .navbar .toggle-btn {
+        display: block;
+    }
+
+    .dropdown-menu {
+        display: block;
+    }
+
 }
