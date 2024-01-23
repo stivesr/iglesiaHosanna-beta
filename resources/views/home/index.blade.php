@@ -46,18 +46,16 @@
             <h1>HOSANNA</h1>
             <p>Centro Cristiano Familiar</p>
             <div>
-                <button type="button"><span></span>HORARIOS</button>
-                <a href="https://www.facebook.com/hosanna.igle" target="_blank">
-                    <button type="button"><span></span>FACEBOOK</button></a>
+                <a href="#" class="modal-btn-horarios"><span></span>HORARIOS</a>
+                <a href="#" class="modal-btn-peticiones"><span></span>PETICIONES</a>
             </div>
         </div>
     </div>
 
     <div class="social-section">
-
+        <h3>Siguenos en</h3>
         <div class="social-icons">
             <a href="https://www.facebook.com/hosanna.igle" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-
             <a href="https://www.instagram.com/hosannaigle" target="_blank"><i class="fa-brands fa-instagram"></i></a>
         </div>
 
@@ -66,21 +64,64 @@
         © Iglesia Hosanna - Todos los Derechos Reservados
     </footer>
 
-    <script>
-        const toggleBtn = document.querySelector('.toggle-btn')
-        const toggleBtnIcon = document.querySelector('.toggle-btn i')
-        const dropDownMenu = document.querySelector('.dropdown-menu')
+    <section class="modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Nuestro Horario Semanal</h2>
+                <a href="#" class="modal-close"><i class="fa-solid fa-x"></i></a>
+            </div>
+            <div class="modal-content">
+                <h3>Servicios Generales</h3>
+                <div class="schedule">
+                    <div class="calendar">
+                        <i class="far fa-calendar"></i>Domingos
+                    </div>
+                    <div class="clock">
+                        <i class="far fa-clock"></i>8 am, 11 am y 6 pm
+                    </div>
+                </div>
+                <div class="schedule">
+                    <div class="calendar">
+                        <i class="far fa-calendar"></i>Martes
+                    </div>
+                    <div>
+                        <i class="far fa-clock"></i>7 pm
+                    </div>
 
-        toggleBtn.onclick = function() {
-            dropDownMenu.classList.toggle('open')
-            const isOpen = dropDownMenu.classList.contains('open')
 
-            toggleBtnIcon.classList = isOpen ?
-                'fa-solid fa-xmark' :
-                'fa-solid fa-bars'
-        }
-    </script>
+                </div>
 
+                <h3>Servicio de Clamor e Intercesión</h3>
+                <div class="schedule">
+                    <div class="calendar">
+                        <i class="far fa-calendar"></i>Sábados
+                    </div>
+                    <div class="clock">
+                        <i class="far fa-clock"></i>8 am
+                    </div>
+
+
+                </div>
+
+                <h3>Reunión de Jóvenes</h3>
+                <div class="schedule">
+                    <div class="calendar">
+                        <i class="far fa-calendar"></i>Sábados
+                    </div>
+                    <div class="clock">
+                        <i class="far fa-clock"></i>6 pm
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <script src="{{ asset('js/index_.js') }}"></script>
 </body>
 
 </html>

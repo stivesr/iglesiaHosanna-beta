@@ -103,7 +103,8 @@
     line-height: 25px;
 }
 
-.content button {
+.content a {
+    display: inline-block;
     width: 200px;
     padding: 15px 0;
     text-align: center;
@@ -116,9 +117,10 @@
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    text-decoration: none;
 }
 
-span {
+.content a span {
     background: #1ec3ff;
     height: 100%;
     width: 0;
@@ -130,7 +132,7 @@ span {
     transition: 0.5s;
 }
 
-button:hover span {
+.content a:hover span {
     width: 100%;
 }
 
@@ -195,6 +197,90 @@ footer {
     font-size: 14px;
 }
 
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 500px;
+    height: 250px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.modal--show {
+    opacity: 1;
+    pointer-events: unset;
+    transition: 0.3s;
+}
+
+
+.modal-container {
+    margin: auto;
+    width: 90%;
+    max-width: 500px;
+
+    max-height: 80vh;
+
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+
+    padding-bottom: 10px;
+
+}
+
+.modal-content {
+    margin: 20px 0;
+    text-align: left;
+    font-size: 16px;
+
+}
+
+.modal-content h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.modal-content .schedule {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.modal-content i {
+    margin-right: 10px;
+}
+
+.modal-close {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #1ec3ff;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.modal-close:hover {
+    transform: scale(1.2);
+}
+
+
+
 @media (max-width: 767px) {
 
     .banner {
@@ -251,13 +337,30 @@ footer {
         display: inline-block;
     }
 
+    .social-section i {
+        font-size: 2rem;
+        color: #000000;
+        margin: 25px;
+    }
+
+    .modal-content {
+        margin: 20px 0;
+        text-align: left;
+        font-size: 12px;
+
+    }
+
+    .modal-content h3 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
 
     footer {
         background-color: #000000;
         color: #fff;
         padding: 15px;
         text-align: center;
-        font-size: 8px;
+        font-size: 10px;
     }
 
 }
