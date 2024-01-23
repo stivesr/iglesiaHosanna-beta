@@ -45,7 +45,7 @@
         <div class="content">
             <h1>HOSANNA</h1>
             <p>Centro Cristiano Familiar</p>
-            <div>
+            <div class="buttons">
                 <a href="#" class="modal-btn-horarios"><span></span>HORARIOS</a>
                 <a href="#" class="modal-btn-peticiones"><span></span>PETICIONES</a>
             </div>
