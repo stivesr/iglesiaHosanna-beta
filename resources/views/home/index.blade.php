@@ -27,7 +27,7 @@
                 <li><a href="#">Actividades</a></li>
                 <li><a href="#">Contacto</a></li>
             </ul>
-            <a href="#" class="action-btn">DASHBOARD</a>
+            <a href="/login" class="action-btn">DASHBOARD</a>
             <div class="toggle-btn">
                 <i class="fa-solid fa-bars"></i>
             </div>

@@ -146,6 +146,7 @@ button:hover span {
     border-radius: 10px;
     overflow: hidden;
     transition: height 0.5s ease-in-out;
+    z-index: 999;
 }
 
 .dropdown-menu.open {
