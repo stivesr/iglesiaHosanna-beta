@@ -38,7 +38,7 @@
                 <li class="option"><a href="/">Inicio</a></li>
                 <li class="option"><a href="#">Actividades</a></li>
                 <li class="option"><a href="#">Contacto</a></li>
-                <li><a href="#" class="action-btn">DASHBOARD</a></li>
+                <li><a href="/login" class="action-btn">DASHBOARD</a></li>
             </ul>
         </div>
 
@@ -47,7 +47,8 @@
             <p>Centro Cristiano Familiar</p>
             <div>
                 <button type="button"><span></span>HORARIOS</button>
-                <button type="button"><span></span>PETICIONES</button>
+                <a href="https://www.facebook.com/hosanna.igle" target="_blank">
+                    <button type="button"><span></span>FACEBOOK</button></a>
             </div>
         </div>
     </div>

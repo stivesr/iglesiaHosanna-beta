@@ -185,6 +185,20 @@ button:hover span {
         background-position: center;
     }
 
+    .hosanna {
+        width: 30px;
+        cursor: pointer;
+    }
+
+    .content h1 {
+        font-size: 35px;
+        margin: 10px;
+    }
+
+    .content p {
+        margin: 10px;
+    }
+
     .navbar .links,
     .navbar .action-btn {
         display: none;
@@ -196,6 +210,21 @@ button:hover span {
 
     .dropdown-menu {
         display: block;
+    }
+
+    .content button {
+        width: 125px;
+        text-align: center;
+        margin: 10px;
+        border-radius: 25px;
+        font-weight: bold;
+        border: 2px solid #1ec3ff;
+        background: transparent;
+        color: #fff;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
     }
 
 }
