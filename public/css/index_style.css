@@ -186,6 +186,7 @@ footer {
     color: #fff;
     padding: 10px;
     text-align: center;
+    font-size: 14px;
 }
 
 @media (max-width: 767px) {
@@ -238,6 +239,15 @@ footer {
         position: relative;
         overflow: hidden;
         display: inline-block;
+    }
+
+
+    footer {
+        background-color: #000000;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        font-size: 8px;
     }
 
 }
