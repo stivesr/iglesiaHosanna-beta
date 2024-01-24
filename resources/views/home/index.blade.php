@@ -43,12 +43,13 @@
         </div>
 
         <div class="content">
-            <h1>HOSANNA</h1>
-            <p>Centro Cristiano Familiar</p>
-            <div class="buttons">
-                <a href="#" class="modal-btn-horarios"><span></span>HORARIOS</a>
-                <a href="#" class="modal-btn-peticiones"><span></span>PETICIONES</a>
+            <h1>Nada hay imposible para Dios!</h1>
+            <div>
+                <a href="#" class="modal-btn" data-modal="horarios">HORARIOS</a>
+                <a href="#" class="modal-btn" data-modal="oracion">ORACIÓN</a>
             </div>
+
+
         </div>
     </div>
 
@@ -64,7 +65,7 @@
         © Iglesia Hosanna - Todos los Derechos Reservados
     </footer>
 
-    <section class="modal">
+    <section class="modal" id="horariosModal">
         <div class="modal-container">
             <div class="modal-header">
                 <h2>Nuestro Horario Semanal</h2>
@@ -72,6 +73,8 @@
             </div>
             <div class="modal-content">
                 <h3>Servicios Generales</h3>
+                <p>Ven y participa en nuestros servicios generales, un espacio acogedor para la adoración y el
+                    crecimiento espiritual.</p>
                 <div class="schedule">
                     <div class="calendar">
                         <i class="far fa-calendar"></i>Domingos
@@ -84,7 +87,7 @@
                     <div class="calendar">
                         <i class="far fa-calendar"></i>Martes
                     </div>
-                    <div>
+                    <div class="clock">
                         <i class="far fa-clock"></i>7 pm
                     </div>
 
@@ -92,6 +95,7 @@
                 </div>
 
                 <h3>Servicio de Clamor e Intercesión</h3>
+                <p>Únete a nosotros en un momento especial de oración, donde levantamos nuestras voces juntos.</p>
                 <div class="schedule">
                     <div class="calendar">
                         <i class="far fa-calendar"></i>Sábados
@@ -104,6 +108,7 @@
                 </div>
 
                 <h3>Reunión de Jóvenes</h3>
+                <p>Únete a servicios dinámicos pensados para tu energía y diversión.</p>
                 <div class="schedule">
                     <div class="calendar">
                         <i class="far fa-calendar"></i>Sábados
@@ -113,6 +118,34 @@
                     </div>
 
 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="modal" id="oracionModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Tiempo de Oración</h2>
+                <a href="#" class="modal-close"><i class="fa-solid fa-x"></i></a>
+            </div>
+            <div class="modal-content">
+                <div>
+                    <p>Únete a nosotros en Zoom para compartir un momento especial de oración como iglesia.</p>
+                </div>
+                <h3>Amanecer con Dios</h3>
+                <div class="schedule">
+                    <div class="calendar">
+                        <i class="far fa-calendar"></i>Todos los días
+                    </div>
+                    <div class="clock">
+                        <i class="far fa-clock"></i>5 am
+                    </div>
+                </div>
+                <div class="zoom-button">
+                    <a href="https://us02web.zoom.us/j/85151928191?pwd=MW9NWnV3TFNlaW0ybytLZjQrbko1QT09"
+                        target="_blank">Enlace de
+                        Zoom</a>
                 </div>
             </div>
         </div>
