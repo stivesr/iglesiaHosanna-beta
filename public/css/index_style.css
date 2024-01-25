@@ -454,8 +454,13 @@ footer {
         background-color: #fff;
     }
 
-    .text {
+    .text-section {
         width: 100%;
+        margin: 5px;
+    }
+
+    .text {
+        padding: 1px;
     }
 
     .map {
