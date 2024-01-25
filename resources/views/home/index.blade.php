@@ -65,15 +65,18 @@
 
     <div class="map-section">
 
-        <div class="text">
+        <div class="text-section">
+            <div class="text">
 
-            <h2>¿Dónde nos encontramos?</h2>
-
-            <p class="location"><i class="fa-solid fa-location-dot"></i> Liberia, Guanacaste, Costa Rica</p>
-
-            <p class="address">100 metros Norte de la entrada principal<br>del Estadio Edgardo Baltodano Briceño</p>
-
+                <h2>¿Dónde nos encontramos?</h2>
+    
+                <p class="location"><i class="fa-solid fa-location-dot"></i> Liberia, Guanacaste, Costa Rica</p>
+    
+                <p class="address">100 metros Norte de la entrada principal<br>del Estadio Edgardo Baltodano Briceño</p>
+    
+            </div>
         </div>
+        
 
         <div class="map">
 
