@@ -33,6 +33,8 @@ Route::get('/logout', [LogoutController::class, 'logout']);
 
 // RUTAS PROTEGIDAS
 Route::view('/register', 'auth.register')->middleware('auth');
+Route::view('/dashboard', 'dashboard.usercontrol')->middleware('auth');
+
 
 // ACCESO DENEGADO
 Route::view('/accessdenied', 'auth.accessdenied')->name('accessdenied');
