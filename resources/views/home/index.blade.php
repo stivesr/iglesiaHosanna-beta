@@ -53,7 +53,13 @@
 
         <div class="content">
 
-            <h1>¡Nada hay imposible para Dios!</h1>
+            <div>
+
+                <p>Bienvenido a Hosanna</p>
+
+                <h1>¡Nada hay imposible para Dios!</h1>
+
+            </div>
 
             <div>
                 <a href="#" class="modal-btn" data-modal="horarios">HORARIOS</a>

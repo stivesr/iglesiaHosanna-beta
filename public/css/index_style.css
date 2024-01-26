@@ -88,9 +88,13 @@
 
 .content h1 {
     font-size: 32px;
-    margin: 25px 5px;
-
+    margin: 5px 5px 25px 5px;
+    text-align: center;
     font-weight: 100;
+}
+
+.content p {
+    font-size: 18px;
 }
 
 .content a {
@@ -265,6 +269,10 @@ footer {
         top: 65%;
     }
 
+    .content p {
+        font-size: 14px;
+    }
+
     .content h1 {
         font-size: 22px;
         margin: 10px;
@@ -322,11 +330,12 @@ footer {
     .text h2 {
         text-align: center;
         font-size: 20px;
-        color: #000000;
+        color: #003053;
+        margin: 0px;
     }
 
     .text p {
-        margin-top: 10px;
+        margin: 10px;
         text-align: center;
     }
 
