@@ -92,7 +92,7 @@
 
     <div class="social-section">
 
-        <h3>Puedes seguirnos en</h3>
+        <h2>Puedes seguirnos en</h2>
 
         <div class="social-icons">
             <a href="https://www.facebook.com/hosanna.igle" target="_blank"><i class="fa-brands fa-facebook"></i></a>
