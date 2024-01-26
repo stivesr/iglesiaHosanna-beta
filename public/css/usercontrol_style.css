@@ -27,22 +27,6 @@ body {
     margin-bottom: 50px;
 }
 
-.top-menu .logo {
-    display: flex;
-    align-items: center;
-}
-
-.top-menu .logo img {
-    width: 40px;
-    transition: width .3s ease;
-}
-
-.top-menu .logo span {
-    font-size: 20px;
-    margin-left: 20px;
-    display: none;
-}
-
 .top-menu .toggle {
     width: 30px;
     height: 20px;

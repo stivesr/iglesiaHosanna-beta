@@ -19,10 +19,6 @@
     <div class="menu-dashboard">
 
         <div class="top-menu">
-            <div class="logo">
-                <img src="{{ asset('/images/png/Hosanna_H.png') }}" alt="Hosanna">
-                <span>Hosanna</span>
-            </div>
             <div class="toggle">
                 <i class="fa-solid fa-bars"></i>
             </div>

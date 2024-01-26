@@ -160,112 +160,6 @@
     justify-content: center;
 }
 
-.modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    pointer-events: none;
-    transition: 0.3s;
-}
-
-.modal--show {
-    opacity: 1;
-    pointer-events: unset;
-    transition: 0.3s;
-}
-
-.modal-container {
-    margin: auto;
-    max-width: 500px;
-    background-color: #E0E0E0;
-    border-radius: 12px;
-    padding: 20px 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-}
-
-.modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-
-}
-
-.modal-content {
-    margin: 20px 0;
-    text-align: left;
-    font-size: 16px;
-    color: #949494;
-
-}
-
-.modal-content h3 {
-    font-size: 20px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    color: rgb(106, 106, 106);
-}
-
-.modal-content .schedule {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin: 10px 0;
-}
-
-.modal-content i {
-    margin-right: 10px;
-}
-
-.modal-open {
-    overflow: auto;
-    pointer-events: none;
-}
-
-.modal-open .modal-container {
-    pointer-events: auto;
-}
-
-.modal-close {
-    text-decoration: none;
-    font-size: 1.5rem;
-    color: #003053;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.modal-close:hover {
-    transform: scale(1.2);
-}
-
-.zoom-button {
-
-    margin-top: 25px;
-    align-items: center;
-    text-align: center;
-}
-
-.zoom-button a {
-    padding: 8px 15px;
-    text-decoration: none;
-    background-color: #003053;
-    border-radius: 25px;
-    color: #E0E0E0;
-    font-size: 14px;
-}
-
-.clock {
-    color: #003053;
-}
-
-.calendar {
-    color: #003053;
-}
-
 .map-section {
     display: flex;
     justify-content: space-between;
@@ -392,21 +286,6 @@ footer {
         overflow: hidden;
         text-decoration: none;
         transition: transform 0.3s;
-    }
-
-    .modal-content {
-        margin: 20px 0;
-        text-align: left;
-        font-size: 12px;
-
-    }
-
-    .modal-content h2 {
-        font-size: 16px;
-    }
-
-    .modal-content h3 {
-        font-size: 14px;
     }
 
     .navbar .links,
