@@ -2,86 +2,117 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
+    <title>Iglesia Hosanna - Login</title>
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/login_style.css') }}">
 
     <!-- FontAwesome -->
-    <script src="https://kit.fontawesome.com/1cf153e67c.js" crossorigin="anonymous"></script>
-
-    <!-- Center content -->
-    <style>
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
 <body>
 
-    <div class="container mt-4">
-        <div class="row justify-content-center">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header text-center text-bg-primary">Inicio de Sesión</div>
-                    <div class="card-body">
-                        <form action="/login" method="POST" id="formIniciarSesion">
-                            @csrf
+    <div class="banner">
 
-                            <!-- User o Email -->
-                            <div class="mb-3">
-                                <div class="input-group">
-                                    <span class="input-group-text" id="basic-addon1">
-                                        <i class="fas fa-user-circle"></i>
-                                    </span>
-                                    <input type="text" class="form-control" id="username" name="username"
-                                        placeholder="usuario o email" required>
-                                </div>
-                            </div>
+        <div class="navbar">
 
-                            <!-- Password -->
-                            <div class="mb-3">
-                                <div class="input-group">
-                                    <span class="input-group-text" id="basic-addon2">
-                                        <i class="fas fa-key"></i>
-                                    </span>
-                                    <input type="password" class="form-control" id="password" name="password"
-                                        placeholder="contraseña" required>
-                                </div>
-                            </div>
+            <a href="/"><img src="{{ asset('/images/png/Hosanna_H.png') }}" class="hosanna" alt="Hosanna"></a>
 
-                            <div class="row justify-content-center mx-3 p-3">
-                                <button type="submit" class="btn btn-primary btn-lg" id="btnIniciarSesion">Iniciar
-                                    Sesión</button>
-                            </div>
+            <ul class="links">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="#">Actividades</a></li>
+                <li><a href="#">Soy Nuevo</a></li>
+            </ul>
 
-                        </form>
+            <a href="/login" class="action-btn">DASHBOARD</a>
+
+            <div class="toggle-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+        </div>
+
+        <div class="dropdown-menu">
+
+            <ul>
+                <li class="option"><a href="/">Inicio</a></li>
+                <li class="option"><a href="#">Actividades</a></li>
+                <li class="option"><a href="#">Soy Nuevo</a></li>
+                <li><a href="/login" class="action-btn">DASHBOARD</a></li>
+            </ul>
+
+        </div>
+
+        <div class="dropdown-menu">
+
+            <ul>
+                <li class="option"><a href="/">Inicio</a></li>
+                <li class="option"><a href="#">Actividades</a></li>
+                <li class="option"><a href="#">Soy Nuevo</a></li>
+                <li><a href="/login" class="action-btn">DASHBOARD</a></li>
+            </ul>
+
+        </div>
+
+        <div class="content">
+
+            <form action="/login" method="POST" id="formIniciarSesion">
+
+                @csrf
+
+                <!-- User o Email -->
+                <div>
+                    <div>
+                        <span>
+                            <i class="fas fa-user-circle"></i>
+                        </span>
+                        <input type="text" id="username" name="username" placeholder="usuario o email" required>
                     </div>
                 </div>
-            </div>
+
+                <!-- Password -->
+                <div>
+                    <div>
+                        <span>
+                            <i class="fas fa-key"></i>
+                        </span>
+                        <input type="password" id="password" name="password" placeholder="contraseña" required>
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit" id="btnIniciarSesion">Iniciar Sesión</button>
+                </div>
+
+            </form>
+
         </div>
+
     </div>
 
-    <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous">
-    </script>
+    <div class="social-section">
+
+        <h2>Puedes seguirnos en</h2>
+
+        <div class="social-icons">
+            <a href="https://www.facebook.com/hosanna.igle" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/hosannaigle" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+
+    </div>
+
+    <footer>
+        © Iglesia Hosanna - Todos los Derechos Reservados
+    </footer>
+
+    <script src="{{ asset('js/login_.js') }}"></script>
 
 </body>
 
